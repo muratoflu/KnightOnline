@@ -32,8 +32,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WarFare", "Client\WarFare\W
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shared", "Server\shared\shared.vcxproj", "{C2FEB024-8E46-4533-918B-7196CAAA4E7D}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ItemEditor", "Tools\ItemEditor\ItemEditor.vcxproj", "{734350E8-5586-46D9-8197-EEEEA3034D86}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -98,14 +96,6 @@ Global
 		{C2FEB024-8E46-4533-918B-7196CAAA4E7D}.Release|Win32.Build.0 = Release|Win32
 		{C2FEB024-8E46-4533-918B-7196CAAA4E7D}.Release|x64.ActiveCfg = Release|x64
 		{C2FEB024-8E46-4533-918B-7196CAAA4E7D}.Release|x64.Build.0 = Release|x64
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Debug|Win32.ActiveCfg = Debug|Win32
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Debug|Win32.Build.0 = Debug|Win32
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Debug|x64.ActiveCfg = Debug|x64
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Debug|x64.Build.0 = Debug|x64
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Release|Win32.ActiveCfg = Release|Win32
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Release|Win32.Build.0 = Release|Win32
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Release|x64.ActiveCfg = Release|x64
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
