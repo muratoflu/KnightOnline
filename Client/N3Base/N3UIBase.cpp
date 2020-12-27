@@ -28,6 +28,11 @@
 static char THIS_FILE[]=__FILE__;
 #endif
 
+#ifdef _N3TOOL
+#include <algorithm>
+#endif // _N3TOOL
+
+
 CN3UIEdit* CN3UIBase::s_pFocusedEdit = NULL;
 CN3UITooltip* CN3UIBase::s_pTooltipCtrl = NULL;
 std::string CN3UIBase::s_szStringTmp; // 임시변수..
@@ -773,7 +778,7 @@ bool CN3UIBase::SwapChild(CN3UIBase* pChild1, CN3UIBase* pChild2)
 		if(*itor2 == pChild2) break;
 	if(itor2 == m_Children.end()) return false;
 
-	swap(*itor1, *itor2);
+	std::iter_swap(*itor1, *itor2);
 
 	return true;
 }
@@ -823,7 +828,7 @@ bool CN3UIBase::MoveToLower(CN3UIBase* pChild)
 			UIListItor itNext = itor1; itNext++;
 			if(itNext != m_Children.end())
 			{
-				swap(*itNext, *itor1);
+				std::iter_swap(*itNext, *itor1);
 				return true;
 			}
 			break;
@@ -844,7 +849,7 @@ bool CN3UIBase::MoveToUpper(CN3UIBase* pChild)
 			if(itor1 != m_Children.begin())
 			{
 				UIListItor itPrev = itor1; itPrev--;
-				swap(*itPrev, *itor1);
+				std::iter_swap(*itPrev, *itor1);
 				return true;
 			}
 			break;

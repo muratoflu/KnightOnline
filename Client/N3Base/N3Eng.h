@@ -50,7 +50,13 @@ public:
 	static void ClearAuto(RECT* pRC = NULL);
 	static void ClearZBuffer(const RECT* pRC = NULL);
 	static void Clear(D3DCOLOR crFill, RECT* pRC = NULL);
+
+#ifdef _N3TOOL
 	static void Present(HWND hWnd, RECT* pRC = NULL);
+#else
+	static void Present(HWND hWnd, RECT* pRC = NULL);
+#endif
+
 
 	bool Init(
 		BOOL bWindowed, SDL_Window* pWindow,
@@ -62,9 +68,7 @@ public:
 		D3DFORMAT TargetFormat, D3DFORMAT* pDepthStencilFormat
 	);
 
-#ifdef _N3TOOL
-	static void Present(HWND hWnd, RECT* pRC = NULL);
-#endif
+
 
 public:
 	CN3Eng(void);
