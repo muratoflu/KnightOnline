@@ -148,7 +148,7 @@ tstring OdbcConnection::ReportSQLError(SQLSMALLINT handleType, SQLHANDLE handle,
 
 	va_list args;
 	va_start(args, szError);
-	_vsntprintf(szErrorBuffer, sizeof(szErrorBuffer), szError, args);
+	_vsntprintf_s(szErrorBuffer, sizeof(szErrorBuffer), szError, args);
 	va_end(args);
 
 	error->Source = szSource;

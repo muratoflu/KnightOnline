@@ -6,15 +6,15 @@
 
 #define INI_BUFFER 512
 
-CIni::CIni(const char *lpFilename)
+CIni::CIni(const char* lpFilename)
 {
 	m_szFileName = lpFilename;
 	Load(lpFilename);
 }
 
-bool CIni::Load(const char * lpFilename /*= nullptr*/)
+bool CIni::Load(const char* lpFilename /*= nullptr*/)
 {
-	const char * fn = (lpFilename == nullptr ? m_szFileName.c_str() : lpFilename);
+	const char* fn = (lpFilename == nullptr ? m_szFileName.c_str() : lpFilename);
 	std::ifstream file(fn);
 	if (!file)
 	{
@@ -27,7 +27,7 @@ bool CIni::Load(const char * lpFilename /*= nullptr*/)
 	// If an invalid section is hit
 	// Ensure that we don't place key/value pairs
 	// from the invalid section into the previously loaded section.
-	bool bSkipNextSection = false; 
+	bool bSkipNextSection = false;
 	while (!file.eof())
 	{
 		std::string line;
@@ -86,17 +86,20 @@ bool CIni::Load(const char * lpFilename /*= nullptr*/)
 	return true;
 }
 
-void CIni::Save(const char * lpFilename /*= nullptr*/)
+void CIni::Save(const char* lpFilename /*= nullptr*/)
 {
-	const char * fn = (lpFilename == nullptr ? m_szFileName.c_str() : lpFilename);
-	FILE * fp = fopen(fn, "w");
-	foreach (sectionItr, m_configMap)
+	const char* fn = (lpFilename == nullptr ? m_szFileName.c_str() : lpFilename);
+
+	FILE* fp;
+	ASSERT(fopen_s(&fp, fn, "w") == ERROR_SUCCESS);
+
+	foreach(sectionItr, m_configMap)
 	{
 		// Start the section
 		fprintf(fp, "[%s]" INI_NEWLINE, sectionItr->first.c_str());
 
 		// Now list out all the key/value pairs
-		foreach (keyItr, sectionItr->second)
+		foreach(keyItr, sectionItr->second)
 			fprintf(fp, "%s=%s" INI_NEWLINE, keyItr->first.c_str(), keyItr->second.c_str());
 
 		// Use a trailing newline to finish the section, to make it easier to read
@@ -124,7 +127,7 @@ bool CIni::GetBool(const char* lpAppName, const char* lpKeyName, const bool bDef
 	return GetInt(lpAppName, lpKeyName, bDefault) == 1;
 }
 
-void CIni::GetString(const char* lpAppName, const char* lpKeyName, const char* lpDefault, std::string & lpOutString, bool bAllowEmptyStrings /*= true*/)
+void CIni::GetString(const char* lpAppName, const char* lpKeyName, const char* lpDefault, std::string& lpOutString, bool bAllowEmptyStrings /*= true*/)
 {
 	ConfigMap::iterator sectionItr = m_configMap.find(lpAppName);
 	if (sectionItr != m_configMap.end())

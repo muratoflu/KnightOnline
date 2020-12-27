@@ -39,13 +39,13 @@ std::wstring s2ws(const std::string& s) {
 //-----------------------------------------------------------------------------
 void N3LoadTexture(const char* szFN) {
 
-	int last_slash = 0;
-	int last_point = 0;
+	size_t last_slash = 0;
+	size_t last_point = 0;
 
 	memset(pTexName, 0x00, 0xFF);
 	while(szFN[last_slash++]!='\\' && last_slash<strlen(szFN));
 	while(szFN[last_point++]!='.' && last_point<strlen(szFN));
-	for(int i=last_slash; i<last_point-1; ++i) {
+	for(size_t i=last_slash; i<last_point-1; ++i) {
 		pTexName[i-last_slash] = szFN[i];
 	}
 
@@ -552,8 +552,8 @@ void GenerateScene(void) {
 	float* vertices = NULL;
 	uint32_t* elements = NULL;
 
-	int iVC = 0;
-	int iFC = 0;
+	uint32_t iVC = 0;
+	uint32_t iFC = 0;
 
 	if(eType == ITEM_TYPE_PLUG) {
 		vertices = new float[5*m_iMaxNumVertices0];

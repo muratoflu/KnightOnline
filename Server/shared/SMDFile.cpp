@@ -33,8 +33,8 @@ SMDFile *SMDFile::Load(std::string mapName, bool bLoadWarpsAndRegeneEvents /*= f
 	std::string filename = string_format(MAP_DIR "%s", mapName.c_str());
 
 	// Does this file exist/can it be opened?
-	FILE *fp = fopen(filename.c_str(), "rb");
-	if (fp == nullptr)
+	FILE* fp;
+	if (fopen_s(&fp, filename.c_str(), "rb") != ERROR_SUCCESS)
 	{
 		printf("ERROR: %s does not exist or no permission to access.\n", filename.c_str());
 		return nullptr;

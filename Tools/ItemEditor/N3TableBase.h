@@ -293,15 +293,6 @@ BOOL CN3TableBase<Type>::LoadFromFile(const std::string& szFN)
 		return FALSE;
 	}
 
-
-	
-	
-	
-	
-	
-	
-	
-	
 	// ÆÄÀÏ ¾ÏÈ£È­ Ç®±â.. .. ÀÓ½Ã ÆÄÀÏ¿¡´Ù ¾´´ÙÀ½ ..
 	std::string szFNTmp = szFN + ".tmp";
 	DWORD dwSizeHigh = 0;
@@ -316,32 +307,15 @@ BOOL CN3TableBase<Type>::LoadFromFile(const std::string& szFN)
 	// ¿ø·¡ ÆÄÀÏÀ» ÀÐ°í..
 	uint8_t* pDatas = new uint8_t[dwSizeLow];
 	DWORD dwRWC = 0;
-	::ReadFile(hFile, pDatas, dwSizeLow, &dwRWC, NULL); // ¾ÏÈ£È­µÈ µ¥ÀÌÅÍ ÀÐ°í..
-	CloseHandle(hFile); // ¿ø·¡ ÆÄÀÏ ´Ý°í
+	::ReadFile(hFile, pDatas, dwSizeLow, &dwRWC, NULL); 
+	CloseHandle(hFile); 
 
-// Å×ÀÌºí ¸¸µå´Â Åø¿¡¼­ ¾²´Â Å°¿Í °°Àº Å°..
 	uint16_t key_r = 0x0816;
 	uint16_t key_c1 = 0x6081;
 	uint16_t key_c2 = 0x1608;
 
-//uint8_t Encrypt(uint8_t plain)
-//{
-//	uint8_t cipher;
-//	cipher = (plain ^ (key_r>>8));
-//	key_r = (cipher + key_r) * key_c1 + key_c2;
-//	return cipher;
-//}
-
-//uint8_t Decrypt(uint8_t cipher)
-//{
-//	uint8_t plain;
-//	plain = (cipher ^ (m_r>>8));
-//	m_r = (cipher + m_r) * m_c1 + m_c2;
-//	return plain;
-//}
-
 	// ¾ÏÈ£È­ Ç®°í..
-	for(int i = 0; i < dwSizeLow; i++)
+	for(size_t i = 0; i < dwSizeLow; i++)
 	{
 		uint8_t byData = (pDatas[i] ^ (key_r>>8));
 		key_r = (pDatas[i] + key_r) * key_c1 + key_c2;

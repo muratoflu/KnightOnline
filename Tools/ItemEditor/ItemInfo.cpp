@@ -117,7 +117,7 @@ bool ItemInfo::LoadInformation(void) {
 */
 void ItemInfo::CreateItemsFromInfo(void) {
 
-	for(int i=0; i<_tbl_item_info->GetSize(); ++i) {
+	for(size_t i=0; i<_tbl_item_info->GetSize(); ++i) {
 		__TABLE_ITEM_BASIC* item = _tbl_item_info->GetIndexedData(i);
 
 		ItemInfo item_info;
@@ -168,16 +168,16 @@ void ItemInfo::setMeshFileForRace(e_Race race, bool check_type) {
 	}
 
 	int filename_ind = -1;
-	for(int i=0; i<_mesh_files_in_dir.size(); ++i) {
+	for(size_t i=0; i<_mesh_files_in_dir.size(); ++i) {
 		char tmp1[0xFFFF] = {};
 		char tmp2[0xFFFF] = {};
 
 		strcpy(tmp1, _mesh_files_in_dir[i].c_str());
 		strcpy(tmp2, filename.c_str());
 
-		for(int j=0; j<strlen(tmp1); ++j)
+		for(size_t j=0; j<strlen(tmp1); ++j)
 			tmp1[j] = toupper(tmp1[j]);
-		for(int j=0; j<strlen(tmp2); ++j)
+		for(size_t j=0; j<strlen(tmp2); ++j)
 			tmp2[j] = toupper(tmp2[j]);
 
 		if(!strcmp(tmp1, tmp2)) {
@@ -223,7 +223,7 @@ string ItemInfo::getItemMeshFileForRace(e_Race race) {
 //-----------------------------------------------------------------------------
 void ItemInfo::setItemMeshFileForRace(e_Race race, string& filename) {
 	int filename_ind = -1;
-	for(int i=0; i<_mesh_files_in_dir.size(); ++i) {
+	for(size_t i=0; i<_mesh_files_in_dir.size(); ++i) {
 		char tmp1[0xFFFF] = {};
 		char tmp2[0xFFFF] = {};
 
@@ -235,9 +235,9 @@ void ItemInfo::setItemMeshFileForRace(e_Race race, string& filename) {
 		// TODO: if the mesh is something like .obj then we should probably
 		// convert it here
 
-		for(int j=0; j<strlen(tmp1); ++j)
+		for(size_t j=0; j<strlen(tmp1); ++j)
 			tmp1[j] = toupper(tmp1[j]);
-		for(int j=0; j<strlen(tmp2); ++j)
+		for(size_t j=0; j<strlen(tmp2); ++j)
 			tmp2[j] = toupper(tmp2[j]);
 
 		if(!strcmp(tmp1, tmp2)) {
