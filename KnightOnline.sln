@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AIServer", "Server\AIServer\proj-AIServer.vcxproj", "{36A92A8F-3820-435C-AC63-E861A556C1BB}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -30,9 +30,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WarFare", "Client\WarFare\W
 		{5E45D92A-702B-4128-A1AF-504A17271D94} = {5E45D92A-702B-4128-A1AF-504A17271D94}
 	EndProjectSection
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ItemEditor", "ItemEditor\ItemEditor.vcxproj", "{734350E8-5586-46D9-8197-EEEEA3034D86}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "shared", "Server\shared\shared.vcxproj", "{C2FEB024-8E46-4533-918B-7196CAAA4E7D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ItemEditor", "Tools\ItemEditor\ItemEditor.vcxproj", "{734350E8-5586-46D9-8197-EEEEA3034D86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,14 +90,6 @@ Global
 		{02A7C2DE-6DB6-477A-977A-ADF0BF2204A6}.Release|Win32.Build.0 = Release|Win32
 		{02A7C2DE-6DB6-477A-977A-ADF0BF2204A6}.Release|x64.ActiveCfg = Release|x64
 		{02A7C2DE-6DB6-477A-977A-ADF0BF2204A6}.Release|x64.Build.0 = Release|x64
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Debug|Win32.ActiveCfg = Debug|Win32
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Debug|Win32.Build.0 = Debug|Win32
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Debug|x64.ActiveCfg = Debug|x64
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Debug|x64.Build.0 = Debug|x64
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Release|Win32.ActiveCfg = Release|Win32
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Release|Win32.Build.0 = Release|Win32
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Release|x64.ActiveCfg = Release|x64
-		{734350E8-5586-46D9-8197-EEEEA3034D86}.Release|x64.Build.0 = Release|x64
 		{C2FEB024-8E46-4533-918B-7196CAAA4E7D}.Debug|Win32.ActiveCfg = Debug|Win32
 		{C2FEB024-8E46-4533-918B-7196CAAA4E7D}.Debug|Win32.Build.0 = Debug|Win32
 		{C2FEB024-8E46-4533-918B-7196CAAA4E7D}.Debug|x64.ActiveCfg = Debug|x64
@@ -106,8 +98,19 @@ Global
 		{C2FEB024-8E46-4533-918B-7196CAAA4E7D}.Release|Win32.Build.0 = Release|Win32
 		{C2FEB024-8E46-4533-918B-7196CAAA4E7D}.Release|x64.ActiveCfg = Release|x64
 		{C2FEB024-8E46-4533-918B-7196CAAA4E7D}.Release|x64.Build.0 = Release|x64
+		{734350E8-5586-46D9-8197-EEEEA3034D86}.Debug|Win32.ActiveCfg = Debug|Win32
+		{734350E8-5586-46D9-8197-EEEEA3034D86}.Debug|Win32.Build.0 = Debug|Win32
+		{734350E8-5586-46D9-8197-EEEEA3034D86}.Debug|x64.ActiveCfg = Debug|x64
+		{734350E8-5586-46D9-8197-EEEEA3034D86}.Debug|x64.Build.0 = Debug|x64
+		{734350E8-5586-46D9-8197-EEEEA3034D86}.Release|Win32.ActiveCfg = Release|Win32
+		{734350E8-5586-46D9-8197-EEEEA3034D86}.Release|Win32.Build.0 = Release|Win32
+		{734350E8-5586-46D9-8197-EEEEA3034D86}.Release|x64.ActiveCfg = Release|x64
+		{734350E8-5586-46D9-8197-EEEEA3034D86}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {76E5FB5F-9120-4D75-861D-6E2749848F62}
 	EndGlobalSection
 EndGlobal
