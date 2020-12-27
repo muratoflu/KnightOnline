@@ -28,7 +28,7 @@ bool ItemInfo::LoadInformation(void) {
 	// NOTE: load the Item_Org TBL
 	_tbl_item_info = new CN3TableBase<__TABLE_ITEM_BASIC>;
 
-	std::string szFN = "Item_Org.tbl";
+	std::string szFN = "Data\\Item_Org_us.tbl";
 	if(_tbl_item_info->LoadFromFile(szFN.c_str()) == false) {
 		printf("Failed to load Item_Org.tbl\n");
 		system("pause");
